@@ -9,6 +9,7 @@ Custom Android view with video player, loader and placeholder image.
 
 To stay up-to-date with news about the library [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40marcinmoskala)](https://twitter.com/marcinmoskala?ref_src=twsrc%5Etfw)
 
+Modified: Add title to video player me [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40liemvotrung)](https://twitter.com/liemvotrung)
 ## Usage
 
 Here is an example flow:
