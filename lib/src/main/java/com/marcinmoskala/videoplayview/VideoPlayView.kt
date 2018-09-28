@@ -5,10 +5,7 @@ import android.graphics.Color
 import android.os.Build
 import android.util.AttributeSet
 import android.view.View
-import android.widget.FrameLayout
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.VideoView
+import android.widget.*
 import com.marcinmoskala.videoplayview.VideoPlayView.State.*
 import kotlin.properties.Delegates.observable
 
@@ -115,6 +112,7 @@ class VideoPlayView @JvmOverloads constructor(
         playView.setOnClickListener {
             play()
         }
+
         setUpOnNotDisplayedListener()
         state = state
     }
@@ -137,5 +135,9 @@ class VideoPlayView @JvmOverloads constructor(
             state is Playing && stopOnPause -> state = Ready
             state is Paused -> state = Playing
         }
+    }
+
+    fun updateMediaController(mediaController: MediaController) {
+        videoView.setMediaController(mediaController)
     }
 }
