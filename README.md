@@ -24,7 +24,9 @@ When you use `loop` then video will be looping forever:
 ```xml
 <com.marcinmoskala.videoplayview.VideoPlayView
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    app:title="Video Title"
+    app:titleColor="#fff"
+    app:titleBackgroundColor="#000"
     app:loop="true"
     app:videoUrl="https://github.com/MarcinMoskala/VideoPlayView/raw/master/videos/cat1.mp4" />
 ```
@@ -38,6 +40,9 @@ You can set custom loader for the time when movie is downloaded from URL:
     android:id="@+id/bigVideoView"
     android:layout_width="match_parent"
     android:layout_height="200dp"
+    app:title="Video Title"
+    app:titleColor="#fff"
+    app:titleBackgroundColor="#000"
     app:videoUrl="https://github.com/MarcinMoskala/VideoPlayView/raw/master/videos/gdg.mp4" />
 ```
 
@@ -59,6 +64,9 @@ You can also show preview images. What is more, videos can be paused by user and
     android:id="@+id/picassoVideoView"
     android:layout_width="match_parent"
     android:layout_height="200dp"
+    app:title="Video Title"
+    app:titleColor="#fff"
+    app:titleBackgroundColor="#000"
     app:loop="true"
     app:videoUrl="https://github.com/MarcinMoskala/VideoPlayView/raw/master/videos/cat1.mp4" />
 ```
