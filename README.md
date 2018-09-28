@@ -2,7 +2,7 @@
 
 Custom Android view with video player, loader and placeholder image.
 
-[![](https://jitpack.io/v/marcinmoskala/VideoPlayView.svg)](https://jitpack.io/#liemvo/VideoPlayView)
+[![](https://jitpack.io/v/liemvo/VideoPlayView.svg)](https://jitpack.io/#liemvo/VideoPlayView)
 [![Analytics](https://ga-beacon.appspot.com/UA-92159206-4/main-page?pixel)](https://github.com/liemvo/VideoPlayView)
 [![Analytics](https://ga-beacon.appspot.com/UA-92159206-7/main-page?pixel)](https://github.com/liemvo/VideoPlayView)
 
@@ -89,6 +89,7 @@ VideoPlayerView properties are:
 * `playButton` - max vale of progress (100 by default).
 * `loop` - video will be replayed automatically when it is finished (`false` by default).
 * `autoplay` - video will be played automatically when it is loaded (`false` by default).
+* `titleView` - title of video in the middle before playing
 
 ## Installation
 
@@ -96,7 +97,7 @@ Just add in your module `build.gradle` following dependency:
 
 ```groovy
 dependencies {
-    implementation 'com.github.liemvo:VideoPlayView:0.0.5'
+    implementation 'com.github.liemvo:VideoPlayView:0.0.6.1'
 }
 ```
 
