@@ -58,7 +58,7 @@ class VideoPlayView @JvmOverloads constructor(
     }
 
     var title: String? by observable(null as String?) {_, _, title ->
-
+        titleView.text = title
     }
 
     var looping: Boolean
