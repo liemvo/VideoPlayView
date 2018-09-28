@@ -96,7 +96,7 @@ Just add in your module `build.gradle` following dependency:
 
 ```groovy
 dependencies {
-    compile 'com.github.marcinmoskala:VideoPlayView:0.0.2'
+    implementation 'com.github.liemvo:VideoPlayView:0.0.5'
 }
 ```
 
