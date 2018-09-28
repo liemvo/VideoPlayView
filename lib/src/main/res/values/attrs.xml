@@ -9,9 +9,9 @@
         <attr name="stopOnPause" format="boolean" />
         <attr name="pauseOnInvisible" format="boolean" />
         <attr name="autoplay" format="boolean" />
-        <attr name="title" format="String" />
+        <attr name="title" format="string" />
         <attr name="titleColor" format="color" />
         <attr name="titleBackgroundColor" format="color"/>
-        <attr name="titleSize" format="Float" />
+        <attr name="titleSize" format="float" />
     </declare-styleable>
 </resources>
