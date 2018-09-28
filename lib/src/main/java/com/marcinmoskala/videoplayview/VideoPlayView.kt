@@ -1,11 +1,13 @@
 package com.marcinmoskala.videoplayview
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Build
 import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.VideoView
 import com.marcinmoskala.videoplayview.VideoPlayView.State.*
 import kotlin.properties.Delegates.observable
@@ -28,6 +30,7 @@ class VideoPlayView @JvmOverloads constructor(
     var state: State by observable(Initial as State) { _, prevState, state ->
         loadingView.visibility = if (state is Loading) View.VISIBLE else View.GONE
         playView.visibility = if (state is Ready || state is Paused) View.VISIBLE else View.GONE
+        titleView.visibility = if (state is Ready || state is Paused) View.VISIBLE else View.GONE
         imageView.visibility = if (state is Playing) View.GONE else View.VISIBLE
         when (state) {
             is Playing -> videoView.start()
@@ -54,6 +57,10 @@ class VideoPlayView @JvmOverloads constructor(
         }
     }
 
+    var title: String? by observable(null as String?) {_, _, title ->
+
+    }
+
     var looping: Boolean
     var autoplay: Boolean
     var stopOnPause: Boolean
@@ -67,6 +74,7 @@ class VideoPlayView @JvmOverloads constructor(
     val imageView: ImageView by view.bindView(R.id.imageView)
     val playView: ImageView by view.bindView(R.id.playView)
     val loadingView: ImageView by view.bindView(R.id.loadingView)
+    val titleView: TextView by view.bindView(R.id.titleView)
 
     init {
         val attrSet = context.theme.obtainStyledAttributes(attrs, R.styleable.VideoPlayView, defStyleAttr, defStyleAttr)
@@ -79,6 +87,12 @@ class VideoPlayView @JvmOverloads constructor(
             attrSet.getDrawable(R.styleable.VideoPlayView_loadingButton)?.let(loadingView::setImageDrawable)
             attrSet.getDrawable(R.styleable.VideoPlayView_image)?.let(imageView::setImageDrawable)
             attrSet.getText(R.styleable.VideoPlayView_videoUrl)?.toString()?.let { videoUrl = it }
+
+            attrSet.getText(R.styleable.VideoPlayView_title)?.toString()?.let { title = it }
+            attrSet.getColor(R.styleable.VideoPlayView_titleColor, Color.WHITE)?.let(titleView::setTextColor)
+            attrSet.getColor(R.styleable.VideoPlayView_titleBackgroundColor, Color.WHITE)?.let(titleView::setBackgroundColor)
+            attrSet.getFloat(R.styleable.VideoPlayView_titleSize, 32.0f)?.let(titleView::setTextSize)
+
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN) {
                 imageView.background = background
             } else {

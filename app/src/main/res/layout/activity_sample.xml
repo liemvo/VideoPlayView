@@ -56,6 +56,9 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@android:color/white"
+            app:title="@string/app_name"
+            app:titleColor="@android:color/white"
+            app:titleBackgroundColor="@color/colorAccent"
             app:image="@drawable/cat"
             app:videoUrl="https://github.com/MarcinMoskala/VideoPlayView/raw/master/videos/cat1.mp4" />
 
